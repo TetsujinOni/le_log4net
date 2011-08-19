@@ -4,6 +4,7 @@ Logging To Logentries from AppHarbor using Log4net
 Simple Usage Example
 ----------------------
 
+
 public class HomeController : Controller
     {
         log4net.ILog log = log4net.LogManager.GetLogger(typeof(HomeController).Name);
