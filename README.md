@@ -22,11 +22,11 @@ steps:
 
 Download log4net from:
 
-http://archive.apache.org/dist/incubator/log4net/1.2.10/incubating-log4net-1.2.10.zip
+<http://archive.apache.org/dist/incubator/log4net/1.2.10/incubating-log4net-1.2.10.zip>
 
-Retreive log4net.dll from 
+Retreive `log4net.dll` from 
 
-\incubating-log4net-1.2.10\log4net-1.2.10\bin\net\2.0\release\log4net.dll
+    \incubating-log4net-1.2.10\log4net-1.2.10\bin\net\2.0\release\log4net.dll
 
 and place it the bin folder of your project.
 
@@ -48,36 +48,36 @@ LoggerConf
 
 Create an xml file called loggerConf.xml in your project with the following
 
-or you can download it from github at (TBD) :
+or you can download it from github at (TBD):
 
-<?xml version="1.0"?>
-  <log4net>
-    <appender name="LeAppender" type="log4net.Appender.LeAppender">
-      <Key value="ac3dc54c-2084-4c00-9792-2de17e0043bc" />
-      <Location value="localhost6/officialCheck.log" />
-      <layout type="log4net.Layout.PatternLayout">
-        <param name="ConversionPattern" value="%d{ddd MMM dd HH:mm:ss zzz yyyy} %: %level%, %m" />
-      </layout>
-    </appender>
-    <root>
-      <level value="ALL" />
-      <appender-ref ref="LeAppender" />
-    </root>
-  </log4net>
+    <?xml version="1.0"?>
+      <log4net>
+        <appender name="LeAppender" type="log4net.Appender.LeAppender">
+          <Key value="ac3dc54c-2084-4c00-9792-2de17e0043bc" />
+          <Location value="localhost6/officialCheck.log" />
+          <layout type="log4net.Layout.PatternLayout">
+            <param name="ConversionPattern" value="%d{ddd MMM dd HH:mm:ss zzz yyyy} %: %level%, %m" />
+          </layout>
+        </appender>
+        <root>
+          <level value="ALL" />
+          <appender-ref ref="LeAppender" />
+        </root>
+      </log4net>
 
-Then place the following line in your AssemblyInfo.cs file:
+Then place the following line in your `AssemblyInfo.cs` file:
 
-[assembly: log4net.Config.XmlConfigurator(ConfigFile="loggerConf.xml", Watch = true)]
+    [assembly: log4net.Config.XmlConfigurator(ConfigFile="loggerConf.xml", Watch = true)]
 
-Finally in your global.asax file, enter the following using directives if you have not
+Finally in your `global.asax` file, enter the following using directives if you have not
 done so already:
 
-using log4net;
-using log4net.Config;
+    using log4net;
+    using log4net.Config;
 
-Then enter the following line in Application_Start():
+Then enter the following line in `Application_Start():`
 
-log4net.Config.BasicConfigurator.Configure();
+    log4net.Config.BasicConfigurator.Configure();
 
 Logging Messages
 ----------------
@@ -86,12 +86,12 @@ With that done, you are ready to send logs to Logentries.
 
 In each class you wish to log from, enter the following using directives at the top if not already there:
 
-using log4net;
-using log4net.Config;
+    using log4net;
+    using log4net.Config;
 
 Then create this object at class-level:
 
-log4net.ILog log = log4net.LogManager.GetLogger(typeof(your_class_name_here).Name);
+    log4net.ILog log = log4net.LogManager.GetLogger(typeof(your_class_name_here).Name);
 
 Be sure to enter the name of current class in the indicated brackets above.
 
@@ -103,7 +103,7 @@ will log to Logentries.
 
 Example:
 
-log.Debug("Debugging Message");
-log.Info("Informational message");
-log.Warn("Warning Message");
+    log.Debug("Debugging Message");
+    log.Info("Informational message");
+    log.Warn("Warning Message");
 
