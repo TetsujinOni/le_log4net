@@ -1,9 +1,27 @@
 Logging To Logentries from AppHarbor using Log4net
 ========================================================
 
-Logentries currently supports log4net logging.
+Simple Usage Example
+----------------------
 
---------------------------------------------------------------
+public class HomeController : Controller
+    {
+        log4net.ILog log = log4net.LogManager.GetLogger(typeof(HomeController).Name);
+        public ActionResult Index()
+        {
+            log.Debug("test message sent using log4net appender");
+            log.Warn("second warning message");
+            ViewBag.Message = "Welcome to ASP.NET MVC!";
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+    }
+    
+------------------------
 
 Before implementing this logger, you need to create an account on Logentries.
 Once you have done this, you must download the getKey.py script on github which
