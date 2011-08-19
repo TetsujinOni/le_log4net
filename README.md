@@ -38,7 +38,8 @@ Logentries log4net Plugin Setup
 --------------------------------
 
 The first file required is called LeAppender.cs and is available on github at
-(TBD)
+
+https://github.com/logentries/le_log4net/blob/master/LeAppender.cs
 
 Add this file to your project as it is a plugin for log4net to send logs to
 Logentries.
@@ -48,8 +49,8 @@ LoggerConf
 
 Create an xml file called loggerConf.xml in your project with the following
 
-or you can download it from github at (TBD):
-
+or you can find it at :  https://github.com/logentries/le_log4net/blob/master/loggerConf.xml
+ 
     <?xml version="1.0"?>
       <log4net>
         <appender name="LeAppender" type="log4net.Appender.LeAppender">
