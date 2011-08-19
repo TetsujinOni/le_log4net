@@ -5,7 +5,7 @@ Simple Usage Example
 ----------------------
 
 
-public class HomeController : Controller
+    public class HomeController : Controller
     {
         log4net.ILog log = log4net.LogManager.GetLogger(typeof(HomeController).Name);
         public ActionResult Index()
