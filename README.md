@@ -8,11 +8,15 @@ Simple Usage Example
     public class HomeController : Controller
     {
         log4net.ILog log = log4net.LogManager.GetLogger(typeof(HomeController).Name);
+        
         public ActionResult Index()
         {
-            log.Debug("test message sent using log4net appender");
-            log.Warn("second warning message");
+            log.Debug("Home page opened");
+            
             ViewBag.Message = "Welcome to ASP.NET MVC!";
+            
+            log.Warn("This is a warning message");
+            
             return View();
         }
 
