@@ -70,13 +70,13 @@ Then place the following line in your `AssemblyInfo.cs` file:
 
     [assembly: log4net.Config.XmlConfigurator(ConfigFile="loggerConf.xml", Watch = true)]
 
-Finally in your `global.asax` file, enter the following using directives if you have not
+In your `global.asax` file, enter the following using directives if you have not
 done so already:
 
     using log4net;
     using log4net.Config;
 
-Then enter the following line in `Application_Start():`
+Finally enter the following line in `Application_Start():`
 
     log4net.Config.BasicConfigurator.Configure();
 
