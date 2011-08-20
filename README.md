@@ -30,12 +30,12 @@ Simple Usage Example
 
 Before implementing this logger, you need to create an account on Logentries.
 Once you have done this, you must download the getKey.py script on github which
-is necessary for getting your user-key.  This user-key is required for each of
-the steps listed below and is referred to below simply as key
+is necessary for getting your user-key.  This user-key is essentially a password
+to your account and is required for each of the steps listed below.
 
 Once you have downloaded the script run it as follows `python getKey.rb --key`.
 It will prompt you for your login credentials and then print out your user-key
-to be used below.
+which is needed in the steps below.
 
 Log4net Setup
 ------------------
@@ -77,8 +77,8 @@ or you can find it at :  https://github.com/logentries/le_log4net/blob/master/lo
     <?xml version="1.0"?>
       <log4net>
         <appender name="LeAppender" type="log4net.Appender.LeAppender">
-          <Key value="ac3dc54c-2084-4c00-9792-2de17e0043bc" />
-          <Location value="localhost6/officialCheck.log" />
+          <Key value="YOUR-USER-KEY-HERE" />
+          <Location value="YOUR-LOCATION-HERE" />
           <layout type="log4net.Layout.PatternLayout">
             <param name="ConversionPattern" value="%d{ddd MMM dd HH:mm:ss zzz yyyy} %: %level%, %m" />
           </layout>
@@ -89,7 +89,16 @@ or you can find it at :  https://github.com/logentries/le_log4net/blob/master/lo
         </root>
       </log4net>
 
-Then place the following line in your `AssemblyInfo.cs` file:
+In this file you will enter your user-key as obtained above with the getKey script in the required
+Key value.
+
+You must also include in the required Location value the name of your host and logfile on Logentries
+
+in the following format:
+
+ 'localhost6/test.log'
+
+Now place the following line in your `AssemblyInfo.cs` file:
 
     [assembly: log4net.Config.XmlConfigurator(ConfigFile="loggerConf.xml", Watch = true)]
 
