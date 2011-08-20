@@ -94,7 +94,7 @@ Key value.
 
 You must also include in the required Location value the name of your host and logfile on Logentries
 
-in the following format:        'localhost6/test.log'
+in the following format:        `localhost6/test.log`
 
 Now place the following line in your `AssemblyInfo.cs` file:
 
