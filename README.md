@@ -34,7 +34,11 @@ To configure Log4Net, you will need to perform the following:
     * (2) Setup Log4Net (if you are not already using it).
     * (3) Configure the Logentries Log4Net plugin.
 
-To obtain your Logentries account key you must download the getKey exe from github. This user-key is essentially a password to your account and is required for each of the steps listed below. To get the key unzip the file you download and run the following from the command line:
+To obtain your Logentries account key you must download the getKey exe from github at:
+
+    https://github.com/logentries/le_log4net/downloads
+    
+This user-key is essentially a password to your account and is required for each of the steps listed below. To get the key unzip the file you download and run the following from the command line:
 
     getKey.exe --key
 
