@@ -40,10 +40,10 @@ which is needed in the steps below.
 Log4net Setup
 ------------------
 
-If you don't already have log4net set up in your project, please follow these
+If you don't already have Log4net set up in your project, please follow these
 steps:
 
-Download log4net from:
+Download Log4net from:
 
 <http://archive.apache.org/dist/incubator/log4net/1.2.10/incubating-log4net-1.2.10.zip>
 
@@ -57,14 +57,14 @@ Then add a reference to this dll from within your project. This is done simply
 by right-clicking References, Click Add Reference and locate the dll in your
 project bin folder.
 
-Logentries log4net Plugin Setup
+Logentries Log4net Plugin Setup
 --------------------------------
 
 The first file required is called LeAppender.cs and is available on github at
 
 https://github.com/logentries/le_log4net/blob/master/LeAppender.cs
 
-Add this file to your project as it is a plugin for log4net to send logs to
+Add this file to your project as it is a plugin for Log4net to send logs to
 Logentries.
 
 LoggerConf
