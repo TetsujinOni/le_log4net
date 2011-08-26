@@ -28,14 +28,17 @@ Simple Usage Example
     
 ------------------------
 
-Before implementing this logger, you need to create an account on Logentries.
-Once you have done this, you must download the getKey.py script on github which
-is necessary for getting your user-key.  This user-key is essentially a password
-to your account and is required for each of the steps listed below.
+To configure Log4Net, you will need to perform the following:
 
-Once you have downloaded the script run it as follows `python getKey.rb --key`.
-It will prompt you for your login credentials and then print out your user-key
-which is needed in the steps below.
+    * (1) Obtain your Logentries account key.
+    * (2) Setup Log4Net (if you are not already using it).
+    * (3) Configure the Logentries Log4Net plugin.
+
+To obtain your Logentries account key you must download the getKey exe from github. This user-key is essentially a password to your account and is required for each of the steps listed below. To get the key unzip the file you download and run the following from the command line:
+
+getKey.exe --key
+
+You will be required to provide your user name and password here. Save the key as you will need this later on. 
 
 Log4net Setup
 ------------------
@@ -94,7 +97,7 @@ Key value.
 
 You must also include in the required Location value the name of your host and logfile on Logentries
 
-in the following format:        `localhost6/test.log`
+in the following format:        `hostname/logname.log`
 
 Now place the following line in your `AssemblyInfo.cs` file:
 
