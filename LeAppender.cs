@@ -1,3 +1,10 @@
+/*
+   Logentries NLog Logging agent
+   Copyright 2010,2011 Logentries, Jlizard
+   Mark Lacomber <marklacomber@gmail.com>
+                                            */
+
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
