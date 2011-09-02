@@ -57,6 +57,7 @@ namespace log4net.Appender
         {
             this.encoding = new System.Text.ASCIIEncoding();
             this.leSocket = new TcpClient("api.logentries.com", 443);
+            this.leSocket.NoDelay = true;
             this.sslSock = new SslStream(this.leSocket.GetStream());
 
             this.sslSock.AuthenticateAsClient("logentries.com");
