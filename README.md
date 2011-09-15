@@ -47,22 +47,9 @@ You will be required to provide your user name and password here. Save the key a
 Log4net Setup
 ------------------
 
-If you don't already have Log4net set up in your project, please follow these
-steps:
+If you don't already have Log4net set up in your project, we suggest using Nuget.
 
-Download Log4net from:
-
-<http://archive.apache.org/dist/incubator/log4net/1.2.10/incubating-log4net-1.2.10.zip>
-
-Retreive `log4net.dll` from 
-
-    \incubating-log4net-1.2.10\log4net-1.2.10\bin\net\2.0\release\log4net.dll
-
-and place it the bin folder of your project.
-
-Then add a reference to this dll from within your project. This is done simply
-by right-clicking References, Click Add Reference and locate the dll in your
-project bin folder.
+Instructions to do so can be found at   http://nuget.org/List/Packages/log4net
 
 Logentries Log4net Plugin Setup
 --------------------------------
