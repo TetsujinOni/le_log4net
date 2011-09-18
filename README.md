@@ -54,12 +54,9 @@ Instructions to do so can be found at   http://nuget.org/List/Packages/log4net
 Logentries Log4net Plugin Setup
 --------------------------------
 
-The first file required is called LeLog4Net.dll and is available on github at
+Now you need to get the Logentries Plugin Library, this step requires Nuget as well.
 
-https://github.com/downloads/logentries/le_log4net/LeLog4Net.dll
-
-Add this library to your project as it is a plugin for Log4net to send logs to
-Logentries.
+The package is found at https://nuget.org/List/Packages/le_log4net
 
 LoggerConf
 ------------------
