@@ -60,7 +60,7 @@ The package is found at https://nuget.org/List/Packages/le_log4net
 
 If you're not using Nuget, the library can be downloaded from:
 
-https://github.com/downloads/logentries/le_log4net/LeLog4Net.dll
+https://github.com/downloads/logentries/le_log4net/le_log4net.dll
 
 It will need to be referenced in your project.
 
