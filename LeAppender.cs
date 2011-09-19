@@ -28,6 +28,7 @@ namespace log4net.Appender
         private System.Text.ASCIIEncoding encoding;
         private String m_Key;  
         private String m_Location; 
+        private bool m_Debug;
         #endregion
 
         #region Public Instance Properties
@@ -42,6 +43,12 @@ namespace log4net.Appender
         {
             get { return m_Location; }
             set { m_Location = value; }
+        }
+        
+        public bool Debug
+        {
+           get { return m_Debug; }
+           set { m_Debug = value; }
         }
         #endregion
 
@@ -80,15 +87,13 @@ namespace log4net.Appender
                 {
                     this.createSocket(this.Key, this.Location);
                 }
-                catch (SocketException e)
+                catch (Exception e)
                 {
-                    Console.Error.WriteLine("Error connecting to Logentries");
-                    Console.Error.WriteLine(e.ToString());
-                }
-                catch (IOException e)
-                {
-                    Console.Error.WriteLine("Error connecting to Logentries");
-                    Console.Error.WriteLine(e.ToString());
+                    if (this.Debug == true)
+                    {
+                        Console.Error.WriteLine("Error connecting to Logentries");
+                        Console.Error.WriteLine(e.ToString());
+                    }
                 }
             }
 
@@ -97,17 +102,27 @@ namespace log4net.Appender
             try
             {
                 this.sslSock.Write(this.encoding.GetBytes(final), 0, final.Length);
-                Console.Error.WriteLine("Sent");
             }
-            catch (SocketException e1)
+            catch (Exception e)
             {
-                Console.Error.WriteLine("Error sending log to logentries");
-                Console.Error.WriteLine(e1.ToString());
-            }
-            catch (IOException e)
-            {
-                Console.Error.WriteLine("Error sending log to Logentries");
-                Console.Error.WriteLine(e.ToString());
+                if (this.Debug == true)
+                {
+                    Console.Error.WriteLine("Error sending log to logentries");
+                    Console.Error.WriteLine(e.ToString());
+                }
+                try
+                {
+                    this.createSocket(this.Key, this.Location);
+                    this.sslSock.Write(this.encoding.GetBytes(final), 0, final.Length);
+                }
+                catch (Exception ex)
+                {
+                    if (this.Debug == true)
+                    {
+                        Console.Error.WriteLine("Error sending log to Logentries");
+                        Console.Error.WriteLine(ex.ToString());
+                    }
+                }
             }
         }
 
@@ -121,8 +136,11 @@ namespace log4net.Appender
                 }
                 catch (SocketException e)
                 {
-                    Console.Error.WriteLine("Error connecting to Logentries");
-                    Console.Error.WriteLine(e.ToString());
+                    if (this.Debug == true)
+                    {
+                        Console.Error.WriteLine("Error connecting to Logentries");
+                        Console.Error.WriteLine(e.ToString());
+                    }
                 }
             }
             foreach (LoggingEvent logEvent in loggingEvents)
