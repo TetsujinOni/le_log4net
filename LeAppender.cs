@@ -109,7 +109,7 @@ namespace log4net.Appender
                 }
                 catch (Exception ex)
                 {
-                        WriteDebugMessages("Error sending log to LogEntries", e);
+                        WriteDebugMessages("Error sending log to LogEntries", ex);
                 }
             }
         }
