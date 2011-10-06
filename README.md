@@ -75,7 +75,7 @@ or you can find it at :  https://github.com/logentries/le_log4net/blob/master/lo
       <log4net>
         <appender name="LeAppender" type="log4net.Appender.LeAppender">
           <Key value="YOUR-USER-KEY-HERE" />
-          <Location value="YOUR-LOG-DESTINATION-HERE" />
+          <Location value="YOUR-LOG-LOCATION-HERE" />
           <Debug value="true" />
           <layout type="log4net.Layout.PatternLayout">
             <param name="ConversionPattern" value="%d{ddd MMM dd HH:mm:ss zzz yyyy} %: %level%, %m" />
