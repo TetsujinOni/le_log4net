@@ -67,25 +67,27 @@ It will need to be referenced in your project.
 LoggerConf
 ------------------
 
-Create an xml file called loggerConf.xml in your project with the following
+The following configuration needs to be placed in your web.config file directly underneath
 
-or you can find it at :  https://github.com/logentries/le_log4net/blob/master/loggerConf.xml
+the opening  `<configuration>`
  
-    <?xml version="1.0"?>
-      <log4net>
-        <appender name="LeAppender" type="log4net.Appender.LeAppender">
-          <Key value="YOUR-USER-KEY-HERE" />
-          <Location value="YOUR-LOG-LOCATION-HERE" />
-          <Debug value="true" />
-          <layout type="log4net.Layout.PatternLayout">
-            <param name="ConversionPattern" value="%d{ddd MMM dd HH:mm:ss zzz yyyy} %: %level%, %m" />
-          </layout>
-        </appender>
-        <root>
-          <level value="ALL" />
-          <appender-ref ref="LeAppender" />
-        </root>
-      </log4net>
+    <configSections>
+        <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
+    </configSections>
+    <log4net>
+      <appender name="LeAppender" type="log4net.Appender.LeAppender">
+        <Key value="LOGENTRIES_USER_KEY" />
+        <Location value="LOGENTRIES_LOCATION" />
+        <Debug value="true" />
+        <layout type="log4net.Layout.PatternLayout">
+          <param name="ConversionPattern" value="%d{ddd MMM dd HH:mm:ss zzz yyyy} %logger %: %level%, %m" />
+        </layout>
+      </appender>
+      <root>
+        <level value="ALL" />
+        <appender-ref ref="LeAppender" />
+      </root>
+    </log4net>
 
 In this file you will enter your user-key as obtained above with the getKey script in the required
 Key value.
