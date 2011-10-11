@@ -38,7 +38,7 @@ To obtain your Logentries account key you must download the getKey exe from gith
 
     https://github.com/downloads/logentries/le_log4net/getkey.zip
     
-This user-key is essentially a password to your account and is required for each of the steps listed below. To get the key unzip the file you download and run the following from the command line:
+This account-key is essentially a password to your account and is required for each of the steps listed below. To get the key unzip the file you download and run the following from the command line:
 
     getKey.exe --key
 
@@ -76,7 +76,7 @@ the opening  `<configuration>`
     </configSections>
     <log4net>
       <appender name="LeAppender" type="log4net.Appender.LeAppender">
-        <Key value="LOGENTRIES_USER_KEY" />
+        <Key value="LOGENTRIES_ACCOUNT_KEY" />
         <Location value="LOGENTRIES_LOCATION" />
         <Debug value="true" />
         <layout type="log4net.Layout.PatternLayout">
@@ -89,7 +89,7 @@ the opening  `<configuration>`
       </root>
     </log4net>
 
-In this file you will enter your user-key as obtained above with the getKey script in the required
+In this file you will enter your account-key as obtained above with the getKey script in the required
 Key value.
 
 You must also include in the required Location value the name of your host and logfile on Logentries
