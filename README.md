@@ -44,25 +44,22 @@ This account-key is essentially a password to your account and is required for e
 
 You will be required to provide your user name and password here. Save the key as you will need this later on. 
 
-Log4net Setup
-------------------
-
-If you don't already have Log4net set up in your project, we suggest using Nuget.
-
-Instructions to do so can be found at   http://nuget.org/List/Packages/log4net
-
 Logentries Log4net Plugin Setup
 --------------------------------
 
-Now you need to get the Logentries Plugin Library, we suggest using Nuget for this as well.
+To install the Logentries Plugin Library, we suggest using Nuget.
 
 The package is found at https://nuget.org/List/Packages/le_log4net
+
+This will also install Log4Net into your project if it is not already installed.
 
 If you're not using Nuget, the library can be downloaded from:
 
 https://github.com/downloads/logentries/le_log4net/le_log4net.dll
 
 It will need to be referenced in your project.
+
+If using this option, please make sure to install Log4Net appropriately. 
 
 LoggerConf
 ------------------
