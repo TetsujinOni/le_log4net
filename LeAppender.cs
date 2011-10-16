@@ -25,7 +25,7 @@ namespace log4net.Appender
         #region Private Instance Fields
         private SslStream sslSock = null;
         private TcpClient leSocket = null;
-        private System.Text.ASCIIEncoding encoding;
+        private System.Text.UTF8Encoding encoding;
         private String m_Key;
         private String m_Location;
         private bool m_Debug;
@@ -62,7 +62,7 @@ namespace log4net.Appender
 
         private void createSocket(String key, String location)
         {
-            this.encoding = new System.Text.ASCIIEncoding();
+            this.encoding = new System.Text.UTF8Encoding();
             this.leSocket = new TcpClient("api.logentries.com", 443);
             this.leSocket.NoDelay = true;
             this.sslSock = new SslStream(this.leSocket.GetStream());
