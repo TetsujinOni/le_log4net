@@ -110,7 +110,7 @@ In each class you wish to log from, enter the following using directives at the 
 
 Then create this object at class-level:
 
-    private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(your_class_name_here).Name);
+    private static readonly ILog log = LogManager.GetLogger(typeof(your_class_name_here).Name);
 
 Be sure to enter the name of current class in the indicated brackets above.
 
