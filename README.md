@@ -95,7 +95,7 @@ in the following format:        `hostname/logname.log`
 
 Now place the following line in your `AssemblyInfo.cs` file:
 
-    [assembly: log4net.Config.XmlConfigurator(ConfigFile="web.config",Watch=true)]
+    [assembly: log4net.Config.XmlConfigurator(ConfigFile="Web.config",Watch=true)]
 
 
 Logging Messages
