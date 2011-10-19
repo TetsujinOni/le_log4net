@@ -80,12 +80,11 @@ the opening  `<configuration>`
       </root>
     </log4net>
 
-In this file you will enter your account-key as obtained above with the getKey script in the required
-Key value.
+Replace the value "LOGENTRIES_ACCOUNT_KEY" with your account-key obtained earlier. Also replace the "LOGENTRIES_LOCATION" value. The 
+value you provide here will appear in your Logentries account and will be used to identify your machine and log events. This should be in the following
+format:
 
-You must also include in the required Location value the name of your host and logfile on Logentries
-
-in the following format:        `hostname/logname.log`
+ `hostname/logname.log`     
 
 If you would rather create a host and log from your command line instead of the Logentries UI,
 
