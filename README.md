@@ -105,7 +105,6 @@ With that done, you are ready to send logs to Logentries.
 In each class you wish to log from, enter the following using directives at the top if not already there:
 
     using log4net;
-    using log4net.Config;
 
 Then create this object at class-level:
 
