@@ -66,7 +66,7 @@ the opening  `<configuration>`
         <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
     </configSections>
     <log4net>
-      <appender name="LeAppender" type="log4net.Appender.LeAppender">
+      <appender name="LeAppender" type="log4net.Appender.LeAppender, le_log4net">
         <Key value="LOGENTRIES_ACCOUNT_KEY" />
         <Location value="LOGENTRIES_LOCATION" />
         <Debug value="true" />
