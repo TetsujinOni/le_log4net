@@ -49,7 +49,7 @@ This will also install Log4Net into your project if it is not already installed.
 
 If you're not using Nuget, the library can be downloaded from:
 
-https://github.com/downloads/logentries/le_log4net/le_log4net.dll
+https://github.com/downloads/logentries/le_log4net/LeLog4net.dll
 
 It will need to be referenced in your project.
 
@@ -66,7 +66,7 @@ the opening  `<configuration>`
         <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
     </configSections>
     <log4net>
-      <appender name="LeAppender" type="log4net.Appender.LeAppender, le_log4net">
+      <appender name="LeAppender" type="log4net.Appender.LeAppender, LeLog4net">
         <Key value="LOGENTRIES_ACCOUNT_KEY" />
         <Location value="LOGENTRIES_LOCATION" />
         <Debug value="true" />
