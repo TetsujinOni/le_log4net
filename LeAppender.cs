@@ -151,7 +151,7 @@ namespace log4net.Appender
             var matches = isWrappedPattern.Matches(potentialKey);
             if (matches.Count == 1)
             {
-                var settingKey = matches[0].Groups[0].Value;
+                var settingKey = matches[0].Groups[1].Value;
                 var appSettings = ConfigurationManager.AppSettings;
                 if (appSettings.HasKeys() && appSettings.AllKeys.Contains(settingKey))
                 {
