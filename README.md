@@ -87,6 +87,26 @@ or you can find it at :  https://github.com/logentries/le_log4net/blob/master/lo
         </root>
       </log4net>
 
+Using the current version of the appender on AppHarbor through their addon:
+
+    <?xml version="1.0"?>
+      <log4net>
+        <appender name="LogEntries" type="log4net.Appender.LeAppender">
+          <Key value="$AppSetting{LOGENTRIES_ACCOUNT_KEY}" />
+          <Location value="$AppSetting{LOGENTRIES_LOCATION}" />
+          <Debug value="true" />
+          <layout type="log4net.Layout.PatternLayout">
+            <param name="ConversionPattern" value="%date %: [%thread] %-5level %logger [%property{NDC}]- %message" />
+          </layout>
+        </appender>
+        <root>
+          <level value="DEBUG" />
+          <appender-ref ref="LogEntries" />
+        </root>
+      </log4net>
+
+You would then need to add AppSettings entries for the add-on configuration variables used in the configuration.
+
 In this file you will enter your user-key as obtained above with the getKey script in the required
 Key value.
 
